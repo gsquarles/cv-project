@@ -105,7 +105,7 @@ function App() {
   return (
     <>
       <Header />
-      <div>
+      <div className=' w-1/2 bg-gray-300 p-5 mt-5 rounded'>
         <PersonalInfo
           personalInfo={personalInfo}
           handlePersonalInfoChange={handlePersonalInfoChange}
@@ -116,15 +116,12 @@ function App() {
           handleAddWorkHistory={handleAddWorkHistory}
           handleDeleteWorkHistory={handleDeleteWorkHistory}
         />
-        <Education
+        {/* <Education
           education={education}
           handleEducationChange={handleEducationChange}
           handleAddEducation={handleAddEducation}
           handleDeleteEducation={handleDeleteEducation}
-        />
-        <button onClick={() => console.log(personalInfo)}>Log Personal</button>
-        <button onClick={() => console.log(workHistory)}>Work History</button>
-        <button onClick={() => console.log(education)}>Log Education</button>
+        /> */}
       </div>
     </>
   );

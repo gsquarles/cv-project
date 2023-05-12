@@ -1,53 +1,52 @@
 export function PersonalInfo({ personalInfo, handlePersonalInfoChange }) {
   return (
     <div>
-      <h2>Personal Information</h2>
+      <h2 className=' text-2xl font-bold font-serif '>Personal Information</h2>
       <form>
-        <label>
-          First Name:
-          <input
-            type='text'
-            name='firstName'
-            value={personalInfo.firstName}
-            onChange={handlePersonalInfoChange}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type='text'
-            name='lastName'
-            value={personalInfo.lastName}
-            onChange={handlePersonalInfoChange}
-          />
-        </label>
-        <label>
-          Email Address:
-          <input
-            type='email'
-            name='email'
-            value={personalInfo.email}
-            onChange={handlePersonalInfoChange}
-          />
-        </label>
-        <label>
-          Phone Number:
-          <input
-            type='tel'
-            name='phone'
-            value={personalInfo.phone}
-            onChange={handlePersonalInfoChange}
-          />
-        </label>
-        <label>
-          Address:
-          <input
-            type='text'
-            name='address'
-            value={personalInfo.address}
-            onChange={handlePersonalInfoChange}
-          />
-        </label>
+        <input
+          type='text'
+          name='firstName'
+          value={personalInfo.firstName}
+          onChange={handlePersonalInfoChange}
+          placeholder='First Name'
+          className='w-full mt-3 rounded h-8 p-2'
+        />
+        <br />
+        <input
+          type='text'
+          name='lastName'
+          value={personalInfo.lastName}
+          onChange={handlePersonalInfoChange}
+          placeholder='Last Name'
+          className='w-full mt-3 rounded h-8 p-2'
+        />
+        <br />
+        <input
+          type='email'
+          name='email'
+          value={personalInfo.email}
+          onChange={handlePersonalInfoChange}
+          placeholder='Email Address'
+          className='w-full mt-3 rounded h-8 p-2'
+        />
+        <br />
+        <input
+          type='tel'
+          name='phone'
+          value={personalInfo.phone}
+          onChange={handlePersonalInfoChange}
+          placeholder='Phone Number'
+          className='w-full mt-3 rounded h-8 p-2'
+        />
+        <br />
+        <input
+          type='text'
+          name='address'
+          value={personalInfo.address}
+          onChange={handlePersonalInfoChange}
+          placeholder='Address'
+          className='w-full mt-3 rounded h-8 p-2'
+        />
       </form>
     </div>
   );
