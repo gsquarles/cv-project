@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { PersonalInfo } from "./components/PersonalInfo";
 import { WorkHistory } from "./components/WorkHistory";
 import { Education } from "./components/Education";
+import { ResumeDisplay } from "./components/ResumeDisplay";
 
 function App() {
   const [isPreviewing, setIsPreviewing] = useState(false);
@@ -105,24 +106,40 @@ function App() {
   return (
     <>
       <Header />
-      <div className=' w-1/2 bg-gray-300 p-5 mt-5 rounded'>
-        <PersonalInfo
+      {isPreviewing ? (
+        <ResumeDisplay
           personalInfo={personalInfo}
-          handlePersonalInfoChange={handlePersonalInfoChange}
-        />
-        <WorkHistory
           workHistory={workHistory}
-          handleWorkHistoryChange={handleWorkHistoryChange}
-          handleAddWorkHistory={handleAddWorkHistory}
-          handleDeleteWorkHistory={handleDeleteWorkHistory}
-        />
-        {/* <Education
           education={education}
-          handleEducationChange={handleEducationChange}
-          handleAddEducation={handleAddEducation}
-          handleDeleteEducation={handleDeleteEducation}
-        /> */}
-      </div>
+          isPreviewing={isPreviewing}
+          setIsPreviewing={setIsPreviewing}
+        />
+      ) : (
+        <div className=' w-1/2 bg-gray-300 p-5 mt-5 rounded shadow-md'>
+          <PersonalInfo
+            personalInfo={personalInfo}
+            handlePersonalInfoChange={handlePersonalInfoChange}
+          />
+          <WorkHistory
+            workHistory={workHistory}
+            handleWorkHistoryChange={handleWorkHistoryChange}
+            handleAddWorkHistory={handleAddWorkHistory}
+            handleDeleteWorkHistory={handleDeleteWorkHistory}
+          />
+          <Education
+            education={education}
+            handleEducationChange={handleEducationChange}
+            handleAddEducation={handleAddEducation}
+            handleDeleteEducation={handleDeleteEducation}
+          />
+          <button
+            className='w-full bg-green-500 rounded p-2 text-white mt-3'
+            onClick={() => setIsPreviewing(!isPreviewing)}
+          >
+            Preview
+          </button>
+        </div>
+      )}
     </>
   );
 }
